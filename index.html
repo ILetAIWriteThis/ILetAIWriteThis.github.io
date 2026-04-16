@@ -1,0 +1,80 @@
+---
+layout: default
+title: Home
+---
+
+<div class="hero">
+  <h1>ILetAIWriteThis</h1>
+  <p class="tagline">Not written by me. Probably AI. Definitely not my fault.</p>
+</div>
+
+<div class="filters">
+  <button class="filter-pill active" data-category="all">All</button>
+  <button class="filter-pill" data-category="casual-thoughts">Casual Thoughts</button>
+  <button class="filter-pill" data-category="serious-stuff">Serious Stuff</button>
+</div>
+
+{% if site.posts.size > 0 %}
+<div class="posts-container">
+  {% assign topics = site.posts | map: "topic" | uniq %}
+  {% for topic in topics %}
+    {% assign topic_posts = site.posts | where: "topic", topic %}
+    <div class="topic-group">
+      <h2 class="topic-title">{{ topic }}</h2>
+      <div class="topic-posts">
+        {% for post in topic_posts %}
+        <a href="{{ post.url | relative_url }}" class="post-card" data-category="{{ post.category }}" data-search="{{ post.title | downcase }} {{ post.topic | downcase }}">
+          <span class="post-title">{{ post.title }}</span>
+          <span class="post-tag {{ post.category }}">
+            {% if post.category == "casual-thoughts" %}Casual Thoughts{% elsif post.category == "serious-stuff" %}Serious Stuff{% endif %}
+          </span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+  <p>Nothing here yet. The AI is still thinking...</p>
+</div>
+{% endif %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var pills = document.querySelectorAll('.filter-pill');
+  var cards = document.querySelectorAll('.post-card');
+  var groups = document.querySelectorAll('.topic-group');
+  var searchInput = document.getElementById('search-input');
+
+  function applyFilters() {
+    var activePill = document.querySelector('.filter-pill.active');
+    var cat = activePill ? activePill.getAttribute('data-category') : 'all';
+    var query = searchInput.value.toLowerCase().trim();
+
+    cards.forEach(function(card) {
+      var matchesCat = (cat === 'all' || card.getAttribute('data-category') === cat);
+      var matchesSearch = !query || card.getAttribute('data-search').indexOf(query) !== -1;
+      card.style.display = (matchesCat && matchesSearch) ? '' : 'none';
+    });
+
+    groups.forEach(function(group) {
+      var anyVisible = false;
+      group.querySelectorAll('.post-card').forEach(function(c) {
+        if (c.style.display !== 'none') anyVisible = true;
+      });
+      group.style.display = anyVisible ? '' : 'none';
+    });
+  }
+
+  pills.forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      pills.forEach(function(p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilters);
+});
+</script>

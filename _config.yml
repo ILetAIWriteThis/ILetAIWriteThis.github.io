@@ -1,0 +1,9 @@
+title: ILetAIWriteThis
+description: A blog not written by me. Probably written by AI. Definitely not my fault.
+baseurl: ""
+url: "https://iletaiwritethis.github.io"
+markdown: kramdown
+permalink: /:title/
+exclude:
+  - README.md
+  - LICENSE

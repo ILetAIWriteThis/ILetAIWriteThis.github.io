@@ -1,0 +1,387 @@
+:root {
+  --bg: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #1c2129;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --text-muted: #8b949e;
+  --text-heading: #f0f6fc;
+  --accent-blue: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-purple: #d2a8ff;
+  --radius: 8px;
+  --max-width: 820px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── Navigation ── */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+}
+
+.nav-logo:hover {
+  text-decoration: none;
+  color: var(--accent-blue);
+}
+
+/* ── Search ── */
+.search-input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.4rem 0.9rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  width: 200px;
+  transition: border-color 0.2s, width 0.3s;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  border-color: var(--accent-blue);
+  width: 260px;
+}
+
+/* ── Main Content ── */
+.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  flex: 1;
+  width: 100%;
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 3rem 0 1.5rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--text-heading);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.hero .tagline {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* ── Filter Pills ── */
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1.5rem 0 2rem;
+}
+
+.filter-pill {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.45rem 1.2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.filter-pill:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
+.filter-pill.active {
+  color: #fff;
+}
+
+.filter-pill.active[data-category="all"] {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.filter-pill.active[data-category="casual-thoughts"] {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+.filter-pill.active[data-category="serious-stuff"] {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+/* ── Topic Groups ── */
+.topic-group {
+  margin-bottom: 2.5rem;
+}
+
+.topic-title {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.75rem;
+}
+
+.topic-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ── Post Cards (index) ── */
+.post-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.25rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.2s;
+  color: var(--text);
+}
+
+.post-card:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--text-muted);
+  text-decoration: none;
+  color: var(--text-heading);
+}
+
+.post-card .post-title {
+  font-weight: 500;
+}
+
+/* ── Category Tags ── */
+.post-tag {
+  font-size: 0.75rem;
+  padding: 0.15rem 0.7rem;
+  border-radius: 2rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.post-tag.casual-thoughts {
+  background: rgba(88, 166, 255, 0.15);
+  color: var(--accent-blue);
+}
+
+.post-tag.serious-stuff {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--accent-green);
+}
+
+/* ── Empty State ── */
+.empty-state {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ── Post Page ── */
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.post-meta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.post-topic {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.post-header h1 {
+  font-size: 2rem;
+  color: var(--text-heading);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+/* ── Post Content ── */
+.post-content {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.post-content h2 {
+  color: var(--text-heading);
+  margin: 2rem 0 0.75rem;
+  font-size: 1.4rem;
+}
+
+.post-content h3 {
+  color: var(--text-heading);
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.15rem;
+}
+
+.post-content p {
+  margin-bottom: 1rem;
+}
+
+.post-content code {
+  background: var(--bg-secondary);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  border: 1px solid var(--border);
+}
+
+.post-content pre {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  font-size: 0.88em;
+  line-height: 1.6;
+}
+
+.post-content ul, .post-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.post-content li {
+  margin-bottom: 0.3rem;
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--accent-blue);
+  padding: 0.25rem 0 0.25rem 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.post-content img {
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* ── Footer ── */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero .tagline {
+    font-size: 0.95rem;
+  }
+
+  .content {
+    padding: 1.25rem 1rem;
+  }
+
+  .post-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .post-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .filters {
+    padding: 1rem 0 1.5rem;
+  }
+
+  .search-input {
+    width: 140px;
+  }
+
+  .search-input:focus {
+    width: 160px;
+  }
+}
