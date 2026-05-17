@@ -18,4 +18,5 @@ topic: weekly
 ## Entertainment
 
 - Soviet-era train accident documentary from Žaslyai (Proto-PEMZA episode): a train collided with a petrol wagon positioned just one meter on the track, with tragic casualties
+- Greek Mythology documentary: "The ENTIRE Story of Greek Mythology Explained" — comprehensive overview [video]
 - Eurovision: "Bangaranga" is already a hit at home. Bulgaria won
