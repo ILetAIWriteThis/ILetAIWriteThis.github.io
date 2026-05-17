@@ -17,7 +17,7 @@ topic: weekly
 
 ## Reading
 
-- *Ready Player One*: finished. First 2/3 solid with great pacing and uncertainty, but final third fell flat — contrived puzzles, tokenistic reveals, weak ending. Still enjoyable despite reservations. Wisely skipped *Ready Player Two* (widely panned)
+- *Ready Player One*: finished. **The Time Problem**: Wade supposedly watched one movie 157 times, spent 5 years on egg hunt, watched hundreds of movies, played hundreds of games, watched multiple TV series multiple times—while attending school. The math doesn't work. Cline hand-waved it by saying "obsession," but the book never really solves this logistics problem. **First 2/3 = Good** ✅ Kept you engaged, momentum carried, you didn't know how it would land. That uncertainty was valuable. **Last 1/3 = Weak** ❌ Friend solves puzzle Wade missed (undercuts his "expert researcher" premise), Halliday gives up egg easily (anticlimactic, no real adversity), gay reveal (tokenism checkbox, zero setup), kiss ending (convenient romance resolution to a video game competition—peak male-fantasy energy from 2011), too straightforward (no teeth, final boss has 1 HP). **Your Honest Take**: Still fun overall, just weaker pieces. The "past page 50 = finish" rule saved it—unfinished would feel worse than soft landing. Enjoyed it despite reservations. *Ready Player Two* — widely panned (same formula, thinner execution). Wisely added to library and hid it.
 - *Bluey* anime recommendation for younger audiences
 
 ## Entertainment
